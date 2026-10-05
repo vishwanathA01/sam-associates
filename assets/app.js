@@ -1,0 +1,14 @@
+document.addEventListener('DOMContentLoaded',()=>{
+ const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links');
+ toggle?.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open?'true':'false');});
+ nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle?.setAttribute('aria-expanded','false')}));
+ const revealObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -30px'});
+ document.querySelectorAll('.reveal').forEach(x=>revealObs.observe(x));
+ const bar=document.querySelector('.progress'),top=document.querySelector('.to-top');
+ const onScroll=()=>{const h=document.documentElement.scrollHeight-innerHeight; if(bar)bar.style.width=(h>0?(scrollY/h*100):0)+'%'; if(top)top.classList.toggle('show',scrollY>500)};window.addEventListener('scroll',onScroll,{passive:true});onScroll();top?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+ document.querySelectorAll('[data-count]').forEach(el=>{let done=false;const o=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!done){done=true;const target=+el.dataset.count,d=900,t0=performance.now();function tick(t){const p=Math.min((t-t0)/d,1),v=Math.floor(target*(1-Math.pow(1-p,3)));el.textContent=v+(el.dataset.suffix||'');if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick);o.disconnect()}},{threshold:.7});o.observe(el)});
+ document.querySelectorAll('.faq-item button').forEach(btn=>btn.addEventListener('click',()=>{const item=btn.closest('.faq-item'),open=item.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');document.querySelectorAll('.faq-item.open').forEach(other=>{if(other!==item){other.classList.remove('open');other.querySelector('button')?.setAttribute('aria-expanded','false')}})}));
+ const amount=document.querySelector('#gstAmount'),rate=document.querySelector('#gstRate'),mode=document.querySelector('#gstMode');
+ function calcGST(){if(!amount)return;const a=Math.max(0,parseFloat(amount.value)||0),r=(parseFloat(rate.value)||0)/100,inclusive=mode.value==='inclusive';let base,tax,total;if(inclusive){total=a;base=r? a/(1+r):a;tax=total-base}else{base=a;tax=a*r;total=a+tax}const money=x=>'₹'+x.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});document.querySelector('#gstTax').textContent=money(tax);document.querySelector('#gstBase').textContent=money(base);document.querySelector('#gstTotal').textContent=money(total)}[amount,rate,mode].forEach(x=>x?.addEventListener('input',calcGST));[rate,mode].forEach(x=>x?.addEventListener('change',calcGST));calcGST();
+ setTimeout(()=>document.querySelector('.page-loader')?.remove(),1200);
+});

@@ -1,0 +1,12 @@
+</main>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><img src="<?=e(base_url('assets/logo.png'))?>" class="footer-logo" alt="SAM & Associates"><p>Professional accounting, tax and compliance support with a practical, client-first approach.</p><div class="footer-social"><a href="tel:+916202426418" aria-label="Call SAM & Associates"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3.8 9.2 3a1.5 1.5 0 0 1 1.8.8l1.2 2.8a1.5 1.5 0 0 1-.4 1.7l-1.5 1.2a14.4 14.4 0 0 0 4.2 4.2l1.2-1.5a1.5 1.5 0 0 1 1.7-.4l2.8 1.2a1.5 1.5 0 0 1 .8 1.8l-.8 2.6a2 2 0 0 1-2 1.4A15.8 15.8 0 0 1 4.2 5.8a2 2 0 0 1 1.4-2Z"/></svg></a><a href="mailto:info.sam2026@yahoo.com" aria-label="Email SAM & Associates"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4.5 7 7.5 6 7.5-6"/></svg></a><a href="https://wa.me/916202426418" target="_blank" rel="noopener" aria-label="Chat with SAM & Associates on WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.6a8 8 0 0 1-11.8 7L4 20l1.4-4A8 8 0 1 1 20 11.6Z"/><path d="M9 8.4c.2-.5.4-.5.7-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.9 1.3 1.6 2.2 2 .2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.4.5 0 .4-.2 1.2-.7 1.5-.5.4-1.1.6-1.8.4-1-.2-2.2-.8-3.4-1.9-1-.9-1.8-2.1-2-3.1-.3-.9-.1-1.7.3-2.4Z"/></svg></a></div></div>
+    <div><h4>Services</h4><a href="<?=e(base_url('services.php'))?>">Bookkeeping</a><a href="<?=e(base_url('services.php'))?>">GST Compliance</a><a href="<?=e(base_url('services.php'))?>">Income Tax</a><a href="<?=e(base_url('services.php'))?>">TDS Compliance</a></div>
+    <div><h4>Contact</h4><a href="tel:+916202426418">+91 6202426418</a><a href="mailto:info.sam2026@yahoo.com">info.sam2026@yahoo.com</a><span>Roshan Nagar Aggwanpur,<br>Faridabad, Haryana – 121013</span></div>
+  </div>
+  <div class="footer-bottom">© <?=date('Y')?> SAM & Associates · Accounts · Tax · Compliance · Secure digital portal</div>
+</footer>
+<button class="to-top" aria-label="Back to top">↑</button>
+<script src="<?=e(base_url('assets/app.js'))?>" defer></script>
+</body></html>
