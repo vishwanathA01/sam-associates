@@ -4,7 +4,7 @@ SAM & ASSOCIATES — BEAUTIFUL PHP WEBSITE
    php -S localhost:8000
 
 2. Open:
-   http://localhost:8000/
+   https://samassociates.page.gd/
    OR http://localhost/sam_associates_beautiful/
 
 3. If using MySQL, visit /setup.php once.
